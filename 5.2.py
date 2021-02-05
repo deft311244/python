@@ -1,3 +1,28 @@
+#5.1
+class nisit : 
+    def __init__(self,name,id,sax,year,subject,province,school) : 
+        self.name = name      
+        self.id = id                               
+        self.sax = sax                            
+        self.year = year            
+        self.subject = subject                   
+        self.province = province                   
+        self.school = school  
+
+    def shownisit(self) :  
+        print("-------เเนะนำตัว---------")
+        print("ชื่อ-นามสกุล :",self.name)
+        print("รหัสนักศึกษา :",self.id)
+        print("เพศ :",self.sax)
+        print("ชั้นปีการศึกษา :",self.year)
+        print("คณะ,สาขาวิชา:",self.subject)
+        print("จังหวัด :",self.province)
+        print("โรงเรียนเดิม :",self.school)
+
+x = nisit("อนุรักษ์บดินทร์ พิทักษ์","633050349-7","ชาย","ปี 1","คอมพิวเตอร์ศึกษา","มหาสารคาม","โรงเรียนพยัคฆภูมิวิทยาคาร")
+x.shownisit()
+
+#5.2
 def menu():
     global choice
     print("\n","*"*10,"ร้านค้า","*"*10)
