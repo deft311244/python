@@ -23,7 +23,7 @@ def insertTousers (number,fname,lname,email,sex,old,year) :
         conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db")
         c = conn.cursor()
 
-        sql = '''INSERT INTO users (number,fname,lname,email,sex,old,year) VALUES (?,?,?,?,?,?,?)'''
+        sql = '''INSERT INTO student (number,fname,lname,email,sex,old,year) VALUES (?,?,?,?,?,?,?)'''
         data = (number,fname,lname,email,sex,old,year)
         c.execute(sql,data)
         conn.commit()
