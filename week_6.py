@@ -34,7 +34,7 @@ def insertTousers (number,fname,lname,email,sex,old,year) :
 
         if conn :
             conn.close()
-
+"""
 # หากต้องการ สร้าง table ใหม่ 
 # 1.ให้สร้างไฟล์ใหม่ 
 # 2.copy ส่วนสร้าง table และ ส่วนสร้างตาราง ไปวาง 
@@ -43,7 +43,7 @@ def insertTousers (number,fname,lname,email,sex,old,year) :
 
 
 #ส่วนฟังก์ชัน
-"""
+
 def menu(): #เมนู
     global choice
     print('\n-----ระบบทะเบียนนักเรียน-----\n',"="*25,'\nเพิ่มนักเรียน กด [a]\nแสดงข้อมูลนักเรียน [s]\nแก้ไขข้อมูลนักเรียน [e]\nลบข้อมูลนักเรียน [d]\nออกจากโปรแกรม [x]')
