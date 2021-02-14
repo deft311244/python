@@ -1,5 +1,6 @@
 
 #สร้าง table 
+#สร้างตาราง 
 #ผมใช้ table ชื่อ student
 """
 import sqlite3
@@ -16,7 +17,7 @@ c.execute ('''CREATE TABLE student (No integer PRIMARY KEY AUTOINCREMENT,
 conn.commit()
 conn.close()
 """
-# สร้างตาราง
+# การสร้าง Function สำหรับเพิ่มข้อมูลลงในตาราง
 """
 def insertTousers (number,fname,lname,email,sex,old,year) :
     try :
@@ -37,7 +38,7 @@ def insertTousers (number,fname,lname,email,sex,old,year) :
 """
 # หากต้องการ สร้าง table ใหม่ 
 # 1.ให้สร้างไฟล์ใหม่ 
-# 2.copy ส่วนสร้าง table และ ส่วนสร้างตาราง ไปวาง 
+# 2.copy ส่วนสร้าง table สร้างตาราง และ ส่วนการสร้าง Function สำหรับเพิ่มข้อมูลลงในตาราง ไปวาง 
 # 3.ทำการเปลี่ยนชื่อ table แล้ว run 
 # ส่วนฟังก์ชัน หากเราเปลี่ยน table แล้ว ให้แก้ไขส่วนที่เป็นชื่อ table ทั้งหมดด้วย
 # ถ้าเปลี่ยนที่อยู่ไฟล์ ก็ควรแก้ไขส่วน conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db") ด้วย
