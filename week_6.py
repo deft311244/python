@@ -40,7 +40,7 @@ def insertTousers (number,fname,lname,email,sex,old,year) :
 # 2.copy ส่วนสร้าง table และ ส่วนสร้างตาราง ไปวาง 
 # 3.ทำการเปลี่ยนชื่อ table แล้ว run 
 # ส่วนฟังก์ชัน หากเราเปลี่ยน table แล้ว ให้แก้ไขส่วนที่เป็นชื่อ table ทั้งหมดด้วย
-
+# ถ้าเปลี่ยนที่อยู่ไฟล์ ก็ควรแก้ไขส่วน conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db") ด้วย
 
 #ส่วนฟังก์ชัน
 
