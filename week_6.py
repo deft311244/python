@@ -41,7 +41,7 @@ def insertTousers (number,fname,lname,email,sex,old,year) :
 # 2.copy ส่วนสร้าง table สร้างตาราง และ ส่วนการสร้าง Function สำหรับเพิ่มข้อมูลลงในตาราง ไปวาง 
 # 3.ทำการเปลี่ยนชื่อ table แล้ว run 
 # ส่วนฟังก์ชัน หากเราเปลี่ยน table แล้ว ให้แก้ไขส่วนที่เป็นชื่อ table ทั้งหมดด้วย
-# ถ้าเปลี่ยนที่อยู่ไฟล์ ก็ควรแก้ไขส่วน conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db") ด้วย
+
 
 #ส่วนฟังก์ชัน
 
@@ -98,20 +98,22 @@ def show(): #แสดงข้อมูลนักเรียน
         print(x)
         
 def edit(): #แก้ไขข้อมูลนักเรียน
+    print("\n-------แก้ไขข้อมูลนักเรียน-------\n","="*25)
+    print("No---ลำดับที่----ชื่อ------นามสกุล------email-----เพศ----อายุ----ชั้นปี----\n","="*65)
+    import sqlite3
+
+    conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db")
+    c = conn.cursor()
+    c.execute('''SELECT * FROM student''')
+
+    result = c.fetchall()
+    for x in result :
+        print(x)
     z = "y"
     while z == "y":
-        print("\n-------แก้ไขข้อมูลนักเรียน-------\n","="*25)
-        print("No---ลำดับที่----ชื่อ------นามสกุล------email-----เพศ----อายุ----ชั้นปี----\n","="*65)
-
-        import sqlite3
-        conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db")
-        c = conn.cursor()
-        c.execute('''SELECT * FROM student''')
-
-        result = c.fetchall()
-        for x in result :
-            print(x)
-            n2 = str(input("\nกรุณาระบุ No ที่ท่านต้องการแก้ไข "))
+            n2 = str(input("\nกด [x] เพื่อยกเลิก \nกรุณาระบุ No ที่ท่านต้องการแก้ไข "))
+            if n2 == "x":
+                break
             print("แก้ไขเป็น")
             b1 = input("ลำดับที่ ")
             b2 = input("ชื่อ ")
@@ -128,6 +130,7 @@ def edit(): #แก้ไขข้อมูลนักเรียน
                 data = (str(b1),str(b2),str(b3),str(b4),str(b5),str(b6),str(b7),str(n2))
                 conn.commit()
                 conn.close()
+                
 
             except sqlite3.Error as e:
                 print('Failed to insert : ',e)
@@ -152,7 +155,9 @@ def delete(): #ลบข้อมูลนักเรียน
         for x in result :
             print(x)
 
-        n1 = str(input("\nกรุณาเลือก No ที่ต้องการลบ "))
+        n1 = str(input("\nกด [x] เพื่อยกเลิก \nNo ที่ต้องการลบ "))
+        if n1 == "x":
+            break
         import sqlite3
         conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db")
         c = conn.cursor()
