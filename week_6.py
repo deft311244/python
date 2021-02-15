@@ -101,41 +101,41 @@ def edit(): #แก้ไขข้อมูลนักเรียน
     z = "y"
     while z == "y":
         print("\n-------แก้ไขข้อมูลนักเรียน-------\n","="*25)
-    print("No---ลำดับที่----ชื่อ------นามสกุล------email-----เพศ----อายุ----ชั้นปี----\n","="*65)
-
-    import sqlite3
-    conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db")
-    c = conn.cursor()
-    c.execute('''SELECT * FROM student''')
-
-    result = c.fetchall()
-    for x in result :
-        print(x)
-        n2 = str(input("\nกรุณาระบุ No ที่ท่านต้องการแก้ไข "))
-        print("แก้ไขเป็น")
-        b1 = input("ลำดับที่ ")
-        b2 = input("ชื่อ ")
-        b3 = input("นามสกุล ")
-        b4 = input("อีเมล ")
-        b5 = input("เพศ ")
-        b6 = input("อายุ ")
-        b7 = input("ชั้นปี ")
+        print("No---ลำดับที่----ชื่อ------นามสกุล------email-----เพศ----อายุ----ชั้นปี----\n","="*65)
 
         import sqlite3
         conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db")
         c = conn.cursor()
-        try :
-            data = (str(b1),str(b2),str(b3),str(b4),str(b5),str(b6),str(b7),str(n2))
-            conn.commit()
-            conn.close()
+        c.execute('''SELECT * FROM student''')
 
-        except sqlite3.Error as e:
-            print('Failed to insert : ',e)
-        finally :
-            if conn :
+        result = c.fetchall()
+        for x in result :
+            print(x)
+            n2 = str(input("\nกรุณาระบุ No ที่ท่านต้องการแก้ไข "))
+            print("แก้ไขเป็น")
+            b1 = input("ลำดับที่ ")
+            b2 = input("ชื่อ ")
+            b3 = input("นามสกุล ")
+            b4 = input("อีเมล ")
+            b5 = input("เพศ ")
+            b6 = input("อายุ ")
+            b7 = input("ชั้นปี ")
+
+            import sqlite3
+            conn = sqlite3.connect(r"D:\\Anurakbodin_python\\week_6.db")
+            c = conn.cursor()
+            try :
+                data = (str(b1),str(b2),str(b3),str(b4),str(b5),str(b6),str(b7),str(n2))
+                conn.commit()
                 conn.close()
-        print("ทำรายการเสร็จสิ้น")
-        z = str(input("ต้องการทำรายการต่อหรือไม่ (y/n) : "))
+
+            except sqlite3.Error as e:
+                print('Failed to insert : ',e)
+            finally :
+                if conn :
+                    conn.close()
+            print("ทำรายการเสร็จสิ้น")
+            z = str(input("ต้องการทำรายการต่อหรือไม่ (y/n) : "))
 
 def delete(): #ลบข้อมูลนักเรียน
     z = "y"
